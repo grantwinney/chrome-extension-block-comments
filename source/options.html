@@ -9,20 +9,18 @@
         <script src="js/options.js"></script>
     </head>
     <body>
-        <div class="header-parent">
-            <div class="header-child">
-                <img src="images/hide-comments-64.png" style="vertical-align:middle">
-                <span class="header-title">
-                    <span class="header-title-first-letter">H</span><span class="header-title-rest-of-word">ide</span>
-                    <span class="header-title-first-letter">C</span><span class="header-title-rest-of-word">omments</span>
-                    <span class="header-title-first-letter">E</span><span class="header-title-rest-of-word">verywhere</span>
-                </span>
-                <span class="header-menu">
-                    <span class="header-menu-item" id="options-menu-item"><a href="javascript:void(0)">Options</a></span>
-                    <span class="header-menu-item" id="filters-menu-item"><a href="javascript:void(0)">Filters</a></span>
-                    <span class="header-menu-item" id="support-menu-item"><a href="javascript:void(0)">Support</a></span>
-                </span>
-            </div>
+        <div class="header">
+            <span class="header-title">
+                <img src="images/hide-comments-64.png">
+                <span class="header-title-rest-of-word"><span class="header-title-first-letter">H</span>ide</span>
+                <span class="header-title-rest-of-word"><span class="header-title-first-letter">C</span>omments</span>
+                <span class="header-title-rest-of-word"><span class="header-title-first-letter">E</span>verywhere</span>
+            </span>
+            <span class="header-menu">
+                <a class="header-menu-item" id="options-menu-item" href="javascript:void(0)">Options</a>
+                <a class="header-menu-item" id="filters-menu-item" href="javascript:void(0)">Filters</a>
+                <a class="header-menu-item" id="support-menu-item" href="javascript:void(0)">Support</a>
+            </span>
         </div>
         <div id="options">
             <div class="pane-title">Options</div>
@@ -31,19 +29,19 @@
                     <td id="one_click_option_description">Make the extension icon in the toolbar simply toggle comment visibility instead of displaying a popup</td></tr>
             </table>
             <p class="pane-subtitle">Updates</p>
-            <div id="new_definition_message">New definitions available</div>
+            <div id="new_definition_message" style="display:none">New definitions available</div>
             <p class="pane-section">The filter list of blocked sites is occasionally updated.</p>
             <p class="pane-section">If one's available, you'll see a banner on this page. To get it, press the button below.</p>
             <p class="pane-section" style="font-style:italic; font-size:smaller">(Updates are also automatically installed when a new window is opened, or when the browser is restarted.)</p>
             <p><input id="update_definitions" type="submit" value="Update Definitions"></p>
         </div>
         
-        <div id="filters">
+        <div id="filters" style="display:none">
             <div class="pane-title">Filters</div>
             <p>You can specify a list of URLs to <em>not</em> block, which should be allowed to show comments all the time.</p>
             <p>Each URL must be a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">regex pattern</a>, one per line. Here are some examples:
             <p>
-                <table id="samples" style="font-size:smaller;">
+                <table id="samples">
                     <tr>
                         <td>exact match</td>
                         <td><code>^http://www\.example\.com/some_path$</code></td>
@@ -75,11 +73,11 @@
             </p>
             <p>
                 <input id="save" type="submit" value="Save Whitelist">
-                <div id="save-notification" class="saved-notification">SAVED!</div>
+                <div id="save-notification" style="display:none">SAVED!</div>
             </p>
         </div>
 
-        <div id="support">
+        <div id="support" style="display:none">
             <p class="pane-subtitle">Questions? Problems?</p>
             <p class="pane-section">Just <a href="https://github.com/grantwinney/hide-comments-everywhere/issues/new">open a new issue</a> and I'll address it as time permits,
                                     or <a href="https://github.com/grantwinney/hide-comments-everywhere/compare">create a pull request</a> if you have a fix.</p>

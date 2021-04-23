@@ -24,7 +24,7 @@ function getAndStoreSiteDefinitions(currentVersion = undefined) {
 function toggleNewDefinitionMessage(show) {
     let message = document.getElementById('new_definition_message');
     if (message != null) {
-        message.style.setProperty('display', show ? 'block' : 'none');
+        message.style.setProperty('display', show ? '' : 'none');
     }
 }
 
@@ -71,7 +71,7 @@ function saveExcludedUrls() {
             if (chrome.runtime.lastError) {
                 console.error(`Error: ${chrome.runtime.lastError.message}`);
             }
-            sn.style.setProperty('display', 'inline')
+            sn.style.setProperty('display', '')
             setTimeout(function() {sn.style.setProperty('display', 'none')}, 4000);
         });
     } else {
@@ -81,11 +81,11 @@ function saveExcludedUrls() {
 }
 
 function showPane(paneToShow) {
-    document.getElementById('options').style.setProperty('display', paneToShow === 'options' ? 'inline' : 'none');
+    document.getElementById('options').style.setProperty('display', paneToShow === 'options' ? '' : 'none');
     document.getElementById('options-menu-item').style.setProperty('text-decoration', paneToShow === 'options' ? 'underline' : 'none');
-    document.getElementById('filters').style.setProperty('display', paneToShow === 'filters' ? 'inline' : 'none');
+    document.getElementById('filters').style.setProperty('display', paneToShow === 'filters' ? '' : 'none');
     document.getElementById('filters-menu-item').style.setProperty('text-decoration', paneToShow === 'filters' ? 'underline' : 'none');
-    document.getElementById('support').style.setProperty('display', paneToShow === 'support' ? 'inline' : 'none');
+    document.getElementById('support').style.setProperty('display', paneToShow === 'support' ? '' : 'none');
     document.getElementById('support-menu-item').style.setProperty('text-decoration', paneToShow === 'support' ? 'underline' : 'none');
 }
 
